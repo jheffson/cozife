@@ -13,3 +13,5 @@ document.querySelectorAll(".bx").forEach((i) => {
         } 
     })
 })
+
+console.log(window.innerWidth);
