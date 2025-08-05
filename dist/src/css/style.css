@@ -39,11 +39,12 @@
     content: "";
     display: block;
     margin: 0;
-    /* position: absolute;
+    position: absolute;
     left: 0;
-    bottom: 0; */
+    /* bottom: 0; */
     width: 0;
-    height: 2.5px;
+    /* height: 2.5px; */
+    height: 3px;
     background: #F9A825;
     cursor: pointer;
     opacity: 0;
@@ -93,12 +94,6 @@
     z-index: -1;
 }
 
-/* @media (max-width: 1024px) {
-    .hero-banner {
-        height: 400px;
-    }
-} */
-
 .banner-content {
     display: flex;
     flex-direction: column;
@@ -108,7 +103,7 @@
     /* padding: 7rem; */
     /* padding: 9.5rem 7rem 7rem; */
     /* padding: min(9.5rem, 8%) min(7rem, 5%) 3rem; */
-    padding: clamp(6rem, 9.5rem, 12vw) clamp(1rem, 7rem, 10vw) 3rem;
+    padding: clamp(6rem, 9.5rem, 12vw) clamp(1rem, 7rem, 10vw) 6rem;
     z-index: 1;
 }
 
@@ -117,7 +112,7 @@
     color: #FFD180;
     font-family: "Quicksand", sans-serif;
     /* font-size: 4.3rem; */
-    font-size: clamp(1rem, calc(4.5vw + 1.5rem), 4.3rem);
+    font-size: clamp(1rem, calc(5vw + 1rem), 4.3rem);
     font-weight: 900;
     letter-spacing: 1px;
     line-height: 1.1;
@@ -127,7 +122,8 @@
 .banner-content p {
     color: #fff;
     font-family: "Quicksand", sans-serif;
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
+    font-size: clamp(0.5rem, calc(1.5vw + 1rem), 1.8rem);
     font-weight: 600;
     letter-spacing: 1px;
     margin-bottom: 1.2rem;
@@ -140,7 +136,7 @@
 }
 
 .cta-btn a {
-    font-size: 1.2rem;
+    font-size: clamp(0.5rem, calc(1.5vw + 1rem), 1.2rem);
     text-decoration: none;
     color: #FFD180;
     padding: 0.5rem 0.8rem;
@@ -158,9 +154,9 @@
     border: none;
 }
 
-.ctn-btn hr {
-    border-left: .6cqh solid #fff;
-}
+/* .cta-btn hr {
+    border-left: .1cqh solid #fff;
+} */
 
 main {
     position: relative;
@@ -200,7 +196,7 @@ main {
     }
     
     .nav-menu {
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
@@ -237,6 +233,11 @@ main {
 
     .nav-menu .bx-x {
         color: #221b1b;
+        transition: 0.5s ease;
+    }
+
+    .nav-menu .bx-x:hover {
+        color: #F9A825;
     }
 
     .header-wrapper .bx-menu {
@@ -269,53 +270,34 @@ main {
     }
 }
 
-@media (max-width: 1347px) {
+@media (max-width: 1348px) {
 
     .hero-banner::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 641px;
         background: rgba(22, 13, 2, 0.7);
-        z-index: -1;
+    }
+
+    .hero-banner {
+        text-align: center;
     }
 
     .banner-content {
-        z-index: 1;
-    }
-
-    .banner-content {
-        /* display: flex;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
+        margin: 0 auto;
         gap: 1rem;
-        width: 100%;
-        height: 100vh;
-        padding: 7rem 12rem;
-        z-index: 1; */
         width: 90%;
+        height: 641px;
+        z-index: 1;
+        /* width: 90%;
         color: #fff;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        text-align: center;
-    }
-
-    .banner-content h1 {
-        /* font-size: clamp(2rem, 6.2vw, 4rem); */
-        font-weight: 900;
-        /* padding: 0 5rem; */
-        /* letter-spacing: 1px;
-        line-height: 1.1; */
-    }
-
-    .banner-content p {
-        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        text-align: center; */
     }
 
     .cta-btn {
@@ -323,8 +305,48 @@ main {
     }
 }
 
-@media (max-width: 843px) {
+@media  (max-width: 517px) {
+    
     .banner-content h1 {
-        padding: 0;
+        font-size: clamp(1rem, calc(4.5vw + 1rem), 2.5rem);
+    }
+
+    .banner-content p {
+        font-size: clamp(0.5rem, calc(1vw + 1rem), 1.8rem);
+    }
+
+    .cta-btn a {
+        font-size: clamp(0.1rem, calc(1vw + 1rem), 1.5rem);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .cta-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .cta-btn hr {
+        border: none;
+    }
+
+    .cta-btn a {
+        border-radius: 1.5rem;
+    }
+}
+
+@media (max-width: 418px) {
+    .banner-content h1 {
+        font-size: clamp(1.2rem, calc(3vw + 1rem), 1.6rem);
+    }
+
+    .banner-content p {
+        font-size: clamp(0.2rem, calc(1vw + 1rem), 1rem);
+    }
+
+    .cta-btn a {
+        font-size: clamp(0.1rem, calc(1vw + 1rem), 1rem);
     }
 }
