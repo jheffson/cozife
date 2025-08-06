@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 /* Header */
 .header-wrapper {
     width: 100%;
@@ -103,7 +107,7 @@
     /* padding: 7rem; */
     /* padding: 9.5rem 7rem 7rem; */
     /* padding: min(9.5rem, 8%) min(7rem, 5%) 3rem; */
-    padding: clamp(6rem, 9.5rem, 12vw) clamp(1rem, 7rem, 10vw) 6rem;
+    padding: clamp(6rem, 9.5rem, 12vw) clamp(1rem, 7rem, 10vw);
     z-index: 1;
 }
 
@@ -123,7 +127,7 @@
     color: #fff;
     font-family: "Quicksand", sans-serif;
     /* font-size: 1.8rem; */
-    font-size: clamp(0.5rem, calc(1.5vw + 1rem), 1.8rem);
+    font-size: clamp(0.5rem, calc(1.5vw + 1rem), 1.5rem);
     font-weight: 600;
     letter-spacing: 1px;
     margin-bottom: 1.2rem;
@@ -136,7 +140,7 @@
 }
 
 .cta-btn a {
-    font-size: clamp(0.5rem, calc(1.5vw + 1rem), 1.2rem);
+    font-size: clamp(1rem, calc(1.5vw + 1rem), 1.2rem);
     text-decoration: none;
     color: #FFD180;
     padding: 0.5rem 0.8rem;
@@ -188,6 +192,8 @@ main {
 @media (max-width: 1016px) {
 
     .header-wrapper {
+        position: absolute;
+        padding: 1.5rem 4rem;
         background-color: transparent;
     }
 
@@ -196,7 +202,7 @@ main {
     }
     
     .nav-menu {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -276,10 +282,6 @@ main {
         background: rgba(22, 13, 2, 0.7);
     }
 
-    .hero-banner {
-        text-align: center;
-    }
-
     .banner-content {
         display: flex;
         flex-direction: column;
@@ -305,22 +307,22 @@ main {
     }
 }
 
-@media  (max-width: 517px) {
-    
+@media (max-width: 517px) {
+
     .banner-content h1 {
         font-size: clamp(1rem, calc(4.5vw + 1rem), 2.5rem);
     }
 
-    .banner-content p {
-        font-size: clamp(0.5rem, calc(1vw + 1rem), 1.8rem);
-    }
-
-    .cta-btn a {
-        font-size: clamp(0.1rem, calc(1vw + 1rem), 1.5rem);
+    .bx {
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 500px) {
+
+    .banner-content p {
+        margin-bottom: 0.8rem;
+    }
 
     .cta-btn {
         display: flex;
@@ -337,9 +339,39 @@ main {
     }
 }
 
-@media (max-width: 418px) {
+@media  (max-width: 473px) {
+
+    .header-wrapper {
+        padding: 1.75rem 2rem;
+    }
+
+    .header-wrapper h2 {
+        font-size: 1.5rem;
+    }
+
+    .bx {
+        padding: 1.6rem 2rem;
+    }
+    
     .banner-content h1 {
-        font-size: clamp(1.2rem, calc(3vw + 1rem), 1.6rem);
+        font-size: clamp(1.6rem, calc(4vw + 1rem), 2.5rem);
+        letter-spacing: -0.5px;
+    }
+
+    .banner-content p {
+        font-size: clamp(0.5rem, calc(1vw + 1rem), 1.8rem);
+        letter-spacing: 0;
+    }
+
+    .cta-btn a {
+        font-size: clamp(0.5rem, calc(1vw + 1rem), 1rem);
+    }
+}
+
+@media (max-width: 374px) {
+
+    .banner-content h1 {
+        font-size: clamp(1.2rem, calc(3.5vw + 1rem), 2.5rem);
     }
 
     .banner-content p {
@@ -347,6 +379,6 @@ main {
     }
 
     .cta-btn a {
-        font-size: clamp(0.1rem, calc(1vw + 1rem), 1rem);
+        font-size: clamp(0.1rem, calc(1vw + 0.8rem), 1rem);
     }
 }
