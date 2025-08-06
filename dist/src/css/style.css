@@ -205,17 +205,20 @@ main {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 100vw;
         height: 100vh;
         padding: 5rem 5rem;
         background-color: #FFF0BF;
         /* background-color: #FFD180; */
         z-index: 5;
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         transform: translateX(100%);
         opacity: 0;
         pointer-events: none;
         transition: transform 0.5s ease, opacity 0.5s ease;
+        overflow-x: hidden;
     }
 
     .nav-menu.show {
@@ -289,7 +292,7 @@ main {
         align-items: center;
         text-align: center;
         margin: 0 auto;
-        gap: 1rem;
+        gap: 0.8rem;
         width: 90%;
         height: 641px;
         z-index: 1;
@@ -308,6 +311,10 @@ main {
 }
 
 @media (max-width: 517px) {
+
+    .banner-content {
+        gap: 0.5rem;
+    }
 
     .banner-content h1 {
         font-size: clamp(1rem, calc(4.5vw + 1rem), 2.5rem);
